@@ -10,7 +10,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
@@ -25,15 +27,15 @@
         <div class="count-container">
             <div class="count-box">
                 <p>Total</p>
-                <p class="text-3xl font-bold">0</p>
+                <p class="text-3xl font-bold" id="total-count">0</p>
             </div>
             <div class="count-box">
                 <p>Interview</p>
-                <p class="text-3xl font-bold text-green-600">0</p>
+                <p class="text-3xl font-bold text-green-600" id="interview-count">0</p>
             </div>
             <div class="count-box">
                 <p>Rejected</p>
-                <p class="text-3xl font-bold text-red-600">0</p>
+                <p class="text-3xl font-bold text-red-600" id="rejected-count">0</p>
             </div>
         </div>
 
@@ -56,7 +58,7 @@
             <button id="rejected-filter-btn" class="filter-btn">Rejected</button>
         </div>
 
-        <div class="allcards">
+        <div class="allcards" id="allcards">
 
             <!-- card 1 -->
             <div class="card bg-white rounded-lg">
@@ -67,7 +69,8 @@
                     <p class="job-details text-stone-500 font-normal">Remote • Full-time • $130,000 - $175,000</p>
 
                     <p class="status">Not Applied</p>
-                    <p class="extra-text">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
+                    <p class="extra-text">Build cross-platform mobile applications using React Native. Work on products
+                        used by millions of users worldwide.</p>
 
                     <div class="card-buttons">
                         <button id="interview-btn">INTERVIEW</button>
@@ -88,7 +91,8 @@
                     <p class="job-details text-stone-500 font-normal">Remote • Full-time • $130,000 - $175,000</p>
 
                     <p class="status">Not Applied</p>
-                    <p class="extra-text">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
+                    <p class="extra-text">Build cross-platform mobile applications using React Native. Work on products
+                        used by millions of users worldwide.</p>
 
                     <div class="card-buttons">
                         <button id="interview-btn">INTERVIEW</button>
@@ -109,7 +113,8 @@
                     <p class="job-details text-stone-500 font-normal">Remote • Full-time • $130,000 - $175,000</p>
 
                     <p class="status">Not Applied</p>
-                    <p class="extra-text">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
+                    <p class="extra-text">Build cross-platform mobile applications using React Native. Work on products
+                        used by millions of users worldwide.</p>
 
                     <div class="card-buttons">
                         <button id="interview-btn">INTERVIEW</button>
@@ -130,7 +135,8 @@
                     <p class="job-details text-stone-500 font-normal">Remote • Full-time • $130,000 - $175,000</p>
 
                     <p class="status">Not Applied</p>
-                    <p class="extra-text">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
+                    <p class="extra-text">Build cross-platform mobile applications using React Native. Work on products
+                        used by millions of users worldwide.</p>
 
                     <div class="card-buttons">
                         <button id="interview-btn">INTERVIEW</button>
@@ -151,7 +157,8 @@
                     <p class="job-details text-stone-500 font-normal">Remote • Full-time • $130,000 - $175,000</p>
 
                     <p class="status">Not Applied</p>
-                    <p class="extra-text">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
+                    <p class="extra-text">Build cross-platform mobile applications using React Native. Work on products
+                        used by millions of users worldwide.</p>
 
                     <div class="card-buttons">
                         <button id="interview-btn">INTERVIEW</button>
@@ -172,7 +179,8 @@
                     <p class="job-details text-stone-500 font-normal">Remote • Full-time • $130,000 - $175,000</p>
 
                     <p class="status">Not Applied</p>
-                    <p class="extra-text">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
+                    <p class="extra-text">Build cross-platform mobile applications using React Native. Work on products
+                        used by millions of users worldwide.</p>
 
                     <div class="card-buttons">
                         <button id="interview-btn">INTERVIEW</button>
@@ -193,7 +201,8 @@
                     <p class="job-details text-stone-500 font-normal">Remote • Full-time • $130,000 - $175,000</p>
 
                     <p class="status">Not Applied</p>
-                    <p class="extra-text">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
+                    <p class="extra-text">Build cross-platform mobile applications using React Native. Work on products
+                        used by millions of users worldwide.</p>
 
                     <div class="card-buttons">
                         <button id="interview-btn">INTERVIEW</button>
@@ -214,7 +223,8 @@
                     <p class="job-details text-stone-500 font-normal">Remote • Full-time • $130,000 - $175,000</p>
 
                     <p class="status">Not Applied</p>
-                    <p class="extra-text">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
+                    <p class="extra-text">Build cross-platform mobile applications using React Native. Work on products
+                        used by millions of users worldwide.</p>
 
                     <div class="card-buttons">
                         <button id="interview-btn">INTERVIEW</button>
