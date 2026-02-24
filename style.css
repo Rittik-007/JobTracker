@@ -4,3 +4,39 @@
     box-sizing: border-box;
 }
 
+body {
+    font-family: "Geist", sans-serif;
+    font-style: normal;
+    background-color: rgb(246, 249, 251);
+}
+
+/* header section styles */
+.header-section {
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 30px 0;
+}
+
+.header-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: oklch(25.7% 0.09 281.288);
+    margin-bottom: 15px;
+}
+
+.count-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+.count-box {
+    /* border: 1px solid rgb(203, 199, 199); */
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+hr{
+    margin-top: 30px;
+    border: 1px solid rgb(224, 222, 222);
+}
