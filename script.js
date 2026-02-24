@@ -16,7 +16,7 @@ const mainContainer = document.querySelector('.main');
 const filterSection = document.getElementById('filtered-section');
 
 
-function calculateCount(){
+function calculateCount() {
     total.innerText = allCards.children.length;
     interviewCount.innerText = interviewList.length;
     rejectedCount.innerText = rejectedList.length;
@@ -25,7 +25,7 @@ function calculateCount(){
 calculateCount();
 
 
-function toggleStyle(id){
+function toggleStyle(id) {
 
     allFilterBtn.classList.add('filter-btn');
     interviewFilterBtn.classList.add('filter-btn');
@@ -45,10 +45,10 @@ function toggleStyle(id){
 }
 
 
-mainContainer.addEventListener('click', function(event){
-    if(event.target.classList.contains('interview-btn')){
+mainContainer.addEventListener('click', function (event) {
+    if (event.target.classList.contains('interview-btn')) {
         const parentNode = event.target.parentNode.parentNode;
-        
+
         const cardTitle = parentNode.querySelector('.card-title').innerText;
         const jobRoll = parentNode.querySelector('.job-roll').innerText;
         const jobDetails = parentNode.querySelector('.job-details').innerText;
@@ -69,11 +69,41 @@ mainContainer.addEventListener('click', function(event){
         // console.log(cardInfo);
 
         const interviewExist = interviewList.find(item => item.cardTitle == cardInfo.cardTitle);
-        if(!interviewExist){
+        if (!interviewExist) {
             interviewList.push(cardInfo);
         }
         // console.log(interviewList);
         calculateCount();
         renderInterview();
     }
+    else if (event.target.classList.contains('reject-btn')) {
+        const parentNode = event.target.parentNode.parentNode;
+
+        const cardTitle = parentNode.querySelector('.card-title').innerText;
+        const jobRoll = parentNode.querySelector('.job-roll').innerText;
+        const jobDetails = parentNode.querySelector('.job-details').innerText;
+        const extraText = parentNode.querySelector('.extra-text').innerText;
+
+        const status = parentNode.querySelector('.status');
+        status.classList.add('rejected-status');
+        status.innerText = 'Rejected';
+
+        const cardInfo = {
+            cardTitle,
+            jobRoll,
+            jobDetails,
+            status,
+            extraText
+        }
+        // console.log(cardInfo);
+
+        const rejectExist = rejectedList.find(item => item.cardTitle == cardInfo.cardTitle);
+        if (!rejectExist) {
+            rejectedList.push(cardInfo);
+        }
+        // console.log(rejectedList);
+        calculateCount();
+    }
 })
+
+
