@@ -40,3 +40,101 @@ hr{
     margin-top: 30px;
     border: 1px solid rgb(224, 222, 222);
 }
+
+
+/* main section styles */
+.main{
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.available-box{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+
+.filter-btn{
+    outline: none;
+    padding: 8px 20px;
+    background-color: white;
+    color: rgb(35, 31, 31);
+    border-radius: 8px;
+    margin-right: 8px;
+    cursor: pointer;
+}
+#all-filter-btn{
+    background-color: #3B82F6;
+    color: aliceblue;
+}
+
+
+.allcards{
+    display: grid;
+    grid-template-columns: 1;
+    gap: 16px;
+    padding: 25px 0;
+}
+.card{
+    padding: 25px;
+    display: flex;
+    justify-content: space-between;
+    transition: 0.2s ease-in-out;
+}
+.card:hover{
+    box-shadow: 0 0 20px rgba(105, 105, 105, 0.11);
+}
+.job-details{
+    margin: 16px 0;
+}
+.status{
+    display: inline;
+    padding: 10px 15px;
+    background-color: #EEF4FF;
+    color: oklch(25.7% 0.09 281.288);
+    font-weight: 500;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+.extra-text{
+    margin: 15px 0 20px;
+}
+
+#interview-btn{
+    font-weight: 600;
+    color: oklch(72.3% 0.219 149.579);
+    border: 2px solid oklch(72.3% 0.219 149.579);
+    padding: 5px 13px;
+    border-radius: 4px;
+    margin-right: 8px;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+#interview-btn:hover{
+    background-color: oklch(72.3% 0.219 149.579);
+    color: aliceblue;
+}
+
+#reject-btn{
+    font-weight: 600;
+    color: oklch(57.7% 0.245 27.325);
+    border: 2px solid oklch(57.7% 0.245 27.325);
+    padding: 5px 13px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+#reject-btn:hover{
+    background-color: oklch(57.7% 0.245 27.325);
+    color: aliceblue;
+}
+
+.delete-icon i{
+    font-size: 2rem;
+    color: rgb(142, 142, 142);
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+.delete-icon i:hover{
+    color: oklch(57.7% 0.245 27.325);
+}
