@@ -48,14 +48,21 @@
                 <p class="font-bold text-blue-950">Available Jobs</p>
             </div>
             <div>
-                <p id="available-count">jobs</p>
+                <p id="available-count"></p>
             </div>
         </div>
 
         <div>
-            <button id="all-filter-btn" class="filter-btn">All</button>
-            <button id="interview-filter-btn" class="filter-btn">Interview</button>
-            <button id="rejected-filter-btn" class="filter-btn">Rejected</button>
+            <button onclick="toggleStyle('all-filter-btn')" id="all-filter-btn"
+                class="filter-btn filter-btn-active">All</button>
+            <button onclick="toggleStyle('interview-filter-btn')" id="interview-filter-btn"
+                class="filter-btn">Interview</button>
+            <button onclick="toggleStyle('rejected-filter-btn')" id="rejected-filter-btn"
+                class="filter-btn">Rejected</button>
+        </div>
+
+        <div id="filtered-section">
+            
         </div>
 
         <div class="allcards" id="allcards">
@@ -73,8 +80,8 @@
                         used by millions of users worldwide.</p>
 
                     <div class="card-buttons">
-                        <button id="interview-btn">INTERVIEW</button>
-                        <button id="reject-btn">REJECT</button>
+                        <button class="interview-btn">INTERVIEW</button>
+                        <button class="reject-btn">REJECT</button>
                     </div>
                 </div>
                 <div class="delete-icon">
@@ -85,18 +92,22 @@
             <!-- card 2 -->
             <div class="card bg-white rounded-lg">
                 <div>
-                    <h3 class="card-title text-2xl font-bold text-blue-950">Mobile First Corp</h3>
-                    <p class="job-roll text-stone-400">React Native Developer</p>
+                    <h3 class="card-title text-2xl font-bold text-blue-950">WebFlow Agency</h3>
+                    <p class="job-roll text-stone-400">Web Designer & Developer</p>
 
-                    <p class="job-details text-stone-500 font-normal">Remote • Full-time • $130,000 - $175,000</p>
+                    <p class="job-details text-stone-500 font-normal">Los Angeles, CA
+                        •
+                        Part-time
+                        •
+                        $80,000 - $120,000</p>
 
                     <p class="status">Not Applied</p>
-                    <p class="extra-text">Build cross-platform mobile applications using React Native. Work on products
-                        used by millions of users worldwide.</p>
+                    <p class="extra-text">Create stunning web experiences for high-profile clients. Must have portfolio
+                        and experience with modern web design trends.</p>
 
                     <div class="card-buttons">
-                        <button id="interview-btn">INTERVIEW</button>
-                        <button id="reject-btn">REJECT</button>
+                        <button class="interview-btn">INTERVIEW</button>
+                        <button class="reject-btn">REJECT</button>
                     </div>
                 </div>
                 <div class="delete-icon">
@@ -107,18 +118,23 @@
             <!-- card 3 -->
             <div class="card bg-white rounded-lg">
                 <div>
-                    <h3 class="card-title text-2xl font-bold text-blue-950">Mobile First Corp</h3>
-                    <p class="job-roll text-stone-400">React Native Developer</p>
+                    <h3 class="card-title text-2xl font-bold text-blue-950">DataViz Solutions</h3>
+                    <p class="job-roll text-stone-400">Data Visualization Specialist</p>
 
-                    <p class="job-details text-stone-500 font-normal">Remote • Full-time • $130,000 - $175,000</p>
+                    <p class="job-details text-stone-500 font-normal">Boston, MA
+                        •
+                        Full-time
+                        •
+                        $125,000 - $165,000</p>
 
                     <p class="status">Not Applied</p>
-                    <p class="extra-text">Build cross-platform mobile applications using React Native. Work on products
-                        used by millions of users worldwide.</p>
+                    <p class="extra-text">Transform complex data into compelling visualizations. Required skills: D3.js,
+                        React, and strong analytical thinking.
+                    </p>
 
                     <div class="card-buttons">
-                        <button id="interview-btn">INTERVIEW</button>
-                        <button id="reject-btn">REJECT</button>
+                        <button class="interview-btn">INTERVIEW</button>
+                        <button class="reject-btn">REJECT</button>
                     </div>
                 </div>
                 <div class="delete-icon">
@@ -129,18 +145,22 @@
             <!-- card 4 -->
             <div class="card bg-white rounded-lg">
                 <div>
-                    <h3 class="card-title text-2xl font-bold text-blue-950">Mobile First Corp</h3>
-                    <p class="job-roll text-stone-400">React Native Developer</p>
+                    <h3 class="card-title text-2xl font-bold text-blue-950">Innovation Labs</h3>
+                    <p class="job-roll text-stone-400">UI/UX Engineer</p>
 
-                    <p class="job-details text-stone-500 font-normal">Remote • Full-time • $130,000 - $175,000</p>
+                    <p class="job-details text-stone-500 font-normal">Austin, TX
+                        •
+                        Full-time
+                        •
+                        $110,000 - $150,000</p>
 
                     <p class="status">Not Applied</p>
-                    <p class="extra-text">Build cross-platform mobile applications using React Native. Work on products
-                        used by millions of users worldwide.</p>
+                    <p class="extra-text">Create beautiful and functional user interfaces for our suite of products.
+                        Strong design skills and frontend development expertise required.</p>
 
                     <div class="card-buttons">
-                        <button id="interview-btn">INTERVIEW</button>
-                        <button id="reject-btn">REJECT</button>
+                        <button class="interview-btn">INTERVIEW</button>
+                        <button class="reject-btn">REJECT</button>
                     </div>
                 </div>
                 <div class="delete-icon">
@@ -151,18 +171,22 @@
             <!-- card 5 -->
             <div class="card bg-white rounded-lg">
                 <div>
-                    <h3 class="card-title text-2xl font-bold text-blue-950">Mobile First Corp</h3>
-                    <p class="job-roll text-stone-400">React Native Developer</p>
+                    <h3 class="card-title text-2xl font-bold text-blue-950">MegaCorp Solutions</h3>
+                    <p class="job-roll text-stone-400">JavaScript Developer</p>
 
-                    <p class="job-details text-stone-500 font-normal">Remote • Full-time • $130,000 - $175,000</p>
+                    <p class="job-details text-stone-500 font-normal">New York, NY
+                        •
+                        Full-time
+                        •
+                        $130,000 - $170,00</p>
 
                     <p class="status">Not Applied</p>
-                    <p class="extra-text">Build cross-platform mobile applications using React Native. Work on products
-                        used by millions of users worldwide.</p>
+                    <p class="extra-text">Build enterprise applications with JavaScript and modern frameworks. We offer
+                        competitive compensation, health insurance, and professional development opportunities.</p>
 
                     <div class="card-buttons">
-                        <button id="interview-btn">INTERVIEW</button>
-                        <button id="reject-btn">REJECT</button>
+                        <button class="interview-btn">INTERVIEW</button>
+                        <button class="reject-btn">REJECT</button>
                     </div>
                 </div>
                 <div class="delete-icon">
@@ -173,18 +197,22 @@
             <!-- card 6 -->
             <div class="card bg-white rounded-lg">
                 <div>
-                    <h3 class="card-title text-2xl font-bold text-blue-950">Mobile First Corp</h3>
-                    <p class="job-roll text-stone-400">React Native Developer</p>
+                    <h3 class="card-title text-2xl font-bold text-blue-950">StartupXYZ</h3>
+                    <p class="job-roll text-stone-400">Full Stack Engineer</p>
 
-                    <p class="job-details text-stone-500 font-normal">Remote • Full-time • $130,000 - $175,000</p>
+                    <p class="job-details text-stone-500 font-normal">Remote
+                        •
+                        Full-time
+                        •
+                        $120,000 - $160,000</p>
 
                     <p class="status">Not Applied</p>
-                    <p class="extra-text">Build cross-platform mobile applications using React Native. Work on products
-                        used by millions of users worldwide.</p>
+                    <p class="extra-text">Join our fast-growing startup and work on our core platform. Experience with
+                        Node.js and React required. Great benefits and equity package included.</p>
 
                     <div class="card-buttons">
-                        <button id="interview-btn">INTERVIEW</button>
-                        <button id="reject-btn">REJECT</button>
+                        <button class="interview-btn">INTERVIEW</button>
+                        <button class="reject-btn">REJECT</button>
                     </div>
                 </div>
                 <div class="delete-icon">
@@ -195,18 +223,23 @@
             <!-- card 7 -->
             <div class="card bg-white rounded-lg">
                 <div>
-                    <h3 class="card-title text-2xl font-bold text-blue-950">Mobile First Corp</h3>
-                    <p class="job-roll text-stone-400">React Native Developer</p>
+                    <h3 class="card-title text-2xl font-bold text-blue-950">TechCorp Industries</h3>
+                    <p class="job-roll text-stone-400">Senior Frontend Developer</p>
 
-                    <p class="job-details text-stone-500 font-normal">Remote • Full-time • $130,000 - $175,000</p>
+                    <p class="job-details text-stone-500 font-normal">San Francisco, CA
+                        •
+                        Full-time
+                        •
+                        $130,000 - $175,000</p>
 
                     <p class="status">Not Applied</p>
-                    <p class="extra-text">Build cross-platform mobile applications using React Native. Work on products
-                        used by millions of users worldwide.</p>
+                    <p class="extra-text">We are looking for an experienced Frontend Developer to build scalable web
+                        applications using React and TypeScript. You will work with a talented team on cutting-edge
+                        projects.</p>
 
                     <div class="card-buttons">
-                        <button id="interview-btn">INTERVIEW</button>
-                        <button id="reject-btn">REJECT</button>
+                        <button class="interview-btn">INTERVIEW</button>
+                        <button class="reject-btn">REJECT</button>
                     </div>
                 </div>
                 <div class="delete-icon">
@@ -217,18 +250,17 @@
             <!-- card 8 -->
             <div class="card bg-white rounded-lg">
                 <div>
-                    <h3 class="card-title text-2xl font-bold text-blue-950">Mobile First Corp</h3>
-                    <p class="job-roll text-stone-400">React Native Developer</p>
+                    <h3 class="card-title text-2xl font-bold text-blue-950">NextGen</h3>
+                    <p class="job-roll text-stone-400">Admin Support</p>
 
-                    <p class="job-details text-stone-500 font-normal">Remote • Full-time • $130,000 - $175,000</p>
+                    <p class="job-details text-stone-500 font-normal">Remote • Full-time • $30,000 - $75,000</p>
 
                     <p class="status">Not Applied</p>
-                    <p class="extra-text">Build cross-platform mobile applications using React Native. Work on products
-                        used by millions of users worldwide.</p>
+                    <p class="extra-text">We are looking for a person who does his work affectively.</p>
 
                     <div class="card-buttons">
-                        <button id="interview-btn">INTERVIEW</button>
-                        <button id="reject-btn">REJECT</button>
+                        <button class="interview-btn">INTERVIEW</button>
+                        <button class="reject-btn">REJECT</button>
                     </div>
                 </div>
                 <div class="delete-icon">

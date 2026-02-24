@@ -63,12 +63,22 @@ hr{
     margin-right: 8px;
     cursor: pointer;
 }
-#all-filter-btn{
+.filter-btn-active{
+    outline: none;
+    padding: 8px 20px;
     background-color: #3B82F6;
     color: aliceblue;
+    border-radius: 8px;
+    margin-right: 8px;
+    cursor: pointer;
 }
 
-
+#filtered-section{
+    display: grid;
+    grid-template-columns: 1;
+    gap: 16px;
+    padding: 25px 0;
+}
 .allcards{
     display: grid;
     grid-template-columns: 1;
@@ -96,11 +106,31 @@ hr{
     border-radius: 8px;
     margin-bottom: 10px;
 }
+.inteview-status{
+    display: inline;
+    padding: 6px 17px;
+    background-color: oklch(72.887% 0.21192 147.841 / 0.047);
+    color: oklch(72.3% 0.219 149.579);
+    border: 2px solid oklch(72.3% 0.219 149.579);
+    font-weight: 500;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+.rejected-status{
+    display: inline;
+    padding: 6px 17px;
+    background-color: oklch(58.305% 0.23863 28.392 / 0.06);
+    color: oklch(57.7% 0.245 27.325);
+    border: 2px solid oklch(57.7% 0.245 27.325);
+    font-weight: 500;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
 .extra-text{
     margin: 15px 0 20px;
 }
 
-#interview-btn{
+.interview-btn{
     font-weight: 600;
     color: oklch(72.3% 0.219 149.579);
     border: 2px solid oklch(72.3% 0.219 149.579);
@@ -110,12 +140,12 @@ hr{
     cursor: pointer;
     transition: 0.4s ease-in-out;
 }
-#interview-btn:hover{
+.interview-btn:hover{
     background-color: oklch(72.3% 0.219 149.579);
     color: aliceblue;
 }
 
-#reject-btn{
+.reject-btn{
     font-weight: 600;
     color: oklch(57.7% 0.245 27.325);
     border: 2px solid oklch(57.7% 0.245 27.325);
@@ -124,7 +154,7 @@ hr{
     cursor: pointer;
     transition: 0.4s ease-in-out;
 }
-#reject-btn:hover{
+.reject-btn:hover{
     background-color: oklch(57.7% 0.245 27.325);
     color: aliceblue;
 }
