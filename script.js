@@ -42,6 +42,22 @@ function toggleStyle(id) {
 
     selected.classList.remove('filter-btn');
     selected.classList.add('filter-btn-active');
+
+
+    if(id == 'interview-filter-btn'){
+        allCards.style.display = 'none';
+        filterSection.style.display = 'grid';
+        renderInterview();
+    }
+    else if(id == 'all-filter-btn'){
+        allCards.style.display = 'grid';
+        filterSection.classList.add('hidden');
+    }
+    else if(id == 'rejected-filter-btn'){
+        allCards.style.display = 'none';
+        filterSection.style.display = 'grid';
+        renderRejected();
+    }
 }
 
 
