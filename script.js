@@ -107,3 +107,33 @@ mainContainer.addEventListener('click', function (event) {
 })
 
 
+function renderInterview() {
+    filterSection.innerHTML = '';
+
+    for (let interview of interviewList) {
+        console.log(interview);
+
+        let div = document.createElement('div');
+        div.className = 'card bg-white rounded-lg';
+        div.innerHTML = `
+            <div>
+                    <h3 class="card-title text-2xl font-bold text-blue-950">${interview.cardTitle}</h3>
+                    <p class="job-roll text-stone-400">${interview.jobRoll}</p>
+
+                    <p class="job-details text-stone-500 font-normal">${interview.jobDetails}</p>
+
+                    <p class="status">${interview.status}</p>
+                    <p class="extra-text">${interview.extraText}</p>
+
+                    <div class="card-buttons">
+                        <button class="interview-btn">INTERVIEW</button>
+                        <button class="reject-btn">REJECT</button>
+                    </div>
+                </div>
+                <div class="delete-icon">
+                    <i class="fa-solid fa-trash-can"></i>
+                </div>
+        `;
+        filterSection.appendChild(div);
+    }
+}
