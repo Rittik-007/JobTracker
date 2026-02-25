@@ -51,7 +51,7 @@ function toggleStyle(id) {
     }
     else if(id == 'all-filter-btn'){
         allCards.style.display = 'grid';
-        filterSection.classList.add('hidden');
+        filterSection.style.display = 'none';
     }
     else if(id == 'rejected-filter-btn'){
         allCards.style.display = 'none';
@@ -64,6 +64,8 @@ function toggleStyle(id) {
 mainContainer.addEventListener('click', function (event) {
     if (event.target.classList.contains('interview-btn')) {
         const parentNode = event.target.parentNode.parentNode;
+        // console.log(parentNode.parentNode);
+        parentNode.parentNode.style.borderLeft = '5px solid oklch(72.3% 0.219 149.579)';
 
         const cardTitle = parentNode.querySelector('.card-title').innerText;
         const jobRoll = parentNode.querySelector('.job-roll').innerText;
@@ -94,6 +96,7 @@ mainContainer.addEventListener('click', function (event) {
     }
     else if (event.target.classList.contains('reject-btn')) {
         const parentNode = event.target.parentNode.parentNode;
+        parentNode.parentNode.style.borderLeft = '5px solid oklch(57.7% 0.245 27.325)';
 
         const cardTitle = parentNode.querySelector('.card-title').innerText;
         const jobRoll = parentNode.querySelector('.job-roll').innerText;

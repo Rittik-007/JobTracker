@@ -73,12 +73,16 @@ hr{
     cursor: pointer;
 }
 
-#filtered-section{
-    display: grid;
+.filtered-section{
+    display: none;
     grid-template-columns: 1;
     gap: 16px;
     padding: 25px 0;
 }
+/* .filtered-section > *:not(:last-child) {
+  margin-bottom: 16px;
+} */
+
 .allcards{
     display: grid;
     grid-template-columns: 1;
