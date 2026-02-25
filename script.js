@@ -63,7 +63,7 @@ mainContainer.addEventListener('click', function (event) {
             cardTitle,
             jobRoll,
             jobDetails,
-            status,
+            status: 'Interview',
             extraText
         }
         // console.log(cardInfo);
@@ -92,7 +92,7 @@ mainContainer.addEventListener('click', function (event) {
             cardTitle,
             jobRoll,
             jobDetails,
-            status,
+            status: 'Rejected',
             extraText
         }
         // console.log(cardInfo);
@@ -103,6 +103,7 @@ mainContainer.addEventListener('click', function (event) {
         }
         // console.log(rejectedList);
         calculateCount();
+        renderRejected();
     }
 })
 
@@ -122,8 +123,39 @@ function renderInterview() {
 
                     <p class="job-details text-stone-500 font-normal">${interview.jobDetails}</p>
 
-                    <p class="status">${interview.status}</p>
+                    <p class="inteview-status">${interview.status}</p>
                     <p class="extra-text">${interview.extraText}</p>
+
+                    <div class="card-buttons">
+                        <button class="interview-btn">INTERVIEW</button>
+                        <button class="reject-btn">REJECT</button>
+                    </div>
+                </div>
+                <div class="delete-icon">
+                    <i class="fa-solid fa-trash-can"></i>
+                </div>
+        `;
+        filterSection.appendChild(div);
+    }
+}
+
+function renderRejected() {
+    filterSection.innerHTML = '';
+
+    for (let rejected of rejectedList) {
+        console.log(rejected);
+
+        let div = document.createElement('div');
+        div.className = 'card bg-white rounded-lg';
+        div.innerHTML = `
+            <div>
+                    <h3 class="card-title text-2xl font-bold text-blue-950">${rejected.cardTitle}</h3>
+                    <p class="job-roll text-stone-400">${rejected.jobRoll}</p>
+
+                    <p class="job-details text-stone-500 font-normal">${rejected.jobDetails}</p>
+
+                    <p class="rejected-status">${rejected.status}</p>
+                    <p class="extra-text">${rejected.extraText}</p>
 
                     <div class="card-buttons">
                         <button class="interview-btn">INTERVIEW</button>
