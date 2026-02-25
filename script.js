@@ -44,16 +44,16 @@ function toggleStyle(id) {
     selected.classList.add('filter-btn-active');
 
 
-    if(id == 'interview-filter-btn'){
+    if (id == 'interview-filter-btn') {
         allCards.style.display = 'none';
         filterSection.style.display = 'grid';
         renderInterview();
     }
-    else if(id == 'all-filter-btn'){
+    else if (id == 'all-filter-btn') {
         allCards.style.display = 'grid';
         filterSection.style.display = 'none';
     }
-    else if(id == 'rejected-filter-btn'){
+    else if (id == 'rejected-filter-btn') {
         allCards.style.display = 'none';
         filterSection.style.display = 'grid';
         renderRejected();
@@ -62,76 +62,87 @@ function toggleStyle(id) {
 
 
 mainContainer.addEventListener('click', function (event) {
+
+    const card = event.target.closest('.card');
+    if (!card) return; // safety
+
+    const cardTitle = card.querySelector('.card-title').innerText;
+    const jobRoll = card.querySelector('.job-roll').innerText;
+    const jobDetails = card.querySelector('.job-details').innerText;
+    const extraText = card.querySelector('.extra-text').innerText;
+    const statusElement = card.querySelector('.status');
+
+    // ================= INTERVIEW =================
     if (event.target.classList.contains('interview-btn')) {
-        const parentNode = event.target.parentNode.parentNode;
-        // console.log(parentNode.parentNode);
-        parentNode.parentNode.style.borderLeft = '5px solid oklch(72.3% 0.219 149.579)';
 
-        const cardTitle = parentNode.querySelector('.card-title').innerText;
-        const jobRoll = parentNode.querySelector('.job-roll').innerText;
-        const jobDetails = parentNode.querySelector('.job-details').innerText;
-        const extraText = parentNode.querySelector('.extra-text').innerText;
+        card.style.borderLeft = '5px solid oklch(72.3% 0.219 149.579)';
 
-        const status = parentNode.querySelector('.status');
-        status.classList.remove('rejected-status');
-        status.classList.add('inteview-status');
-        status.innerText = 'Interview';
+        statusElement.classList.remove('rejected-status');
+        statusElement.classList.add('interview-status');
+        statusElement.innerText = event.target.innerText;
 
         const cardInfo = {
             cardTitle,
             jobRoll,
             jobDetails,
-            status: 'Interview',
+            status: event.target.innerText, // STRING only
             extraText
-        }
-        // console.log(cardInfo);
+        };
 
-        const interviewExist = interviewList.find(item => item.cardTitle == cardInfo.cardTitle);
-        if (!interviewExist) {
+        const exist = interviewList.find(item => item.cardTitle === cardTitle);
+
+        if (!exist) {
             interviewList.push(cardInfo);
         }
-        // console.log(interviewList);
-        calculateCount();
+
+        // remove from rejected list
+        rejectedList = rejectedList.filter(item => item.cardTitle !== cardTitle);
+
         renderInterview();
+        renderRejected();
+        calculateCount();
     }
+
+    // ================= REJECT =================
     else if (event.target.classList.contains('reject-btn')) {
-        const parentNode = event.target.parentNode.parentNode;
-        parentNode.parentNode.style.borderLeft = '5px solid oklch(57.7% 0.245 27.325)';
 
-        const cardTitle = parentNode.querySelector('.card-title').innerText;
-        const jobRoll = parentNode.querySelector('.job-roll').innerText;
-        const jobDetails = parentNode.querySelector('.job-details').innerText;
-        const extraText = parentNode.querySelector('.extra-text').innerText;
+        card.style.borderLeft = '5px solid oklch(57.7% 0.245 27.325)';
 
-        const status = parentNode.querySelector('.status');
-        status.classList.add('rejected-status');
-        status.innerText = 'Rejected';
+        statusElement.classList.remove('interview-status');
+        statusElement.classList.add('rejected-status');
+        statusElement.innerText = event.target.innerText;
 
         const cardInfo = {
             cardTitle,
             jobRoll,
             jobDetails,
-            status: 'Rejected',
+            status: event.target.innerText, // STRING only
             extraText
-        }
-        // console.log(cardInfo);
+        };
 
-        const rejectExist = rejectedList.find(item => item.cardTitle == cardInfo.cardTitle);
-        if (!rejectExist) {
+        const exist = rejectedList.find(item => item.cardTitle === cardTitle);
+
+        if (!exist) {
             rejectedList.push(cardInfo);
         }
-        // console.log(rejectedList);
-        calculateCount();
+
+        // remove from interview list
+        interviewList = interviewList.filter(item => item.cardTitle !== cardTitle);
+
         renderRejected();
+        renderInterview();
+        calculateCount();
     }
-})
+
+});
 
 
 function renderInterview() {
     filterSection.innerHTML = '';
+    console.log("Hello");
 
     for (let interview of interviewList) {
-        console.log(interview);
+        console.log({ interview });
 
         let div = document.createElement('div');
         div.className = 'card bg-white rounded-lg';
@@ -142,7 +153,7 @@ function renderInterview() {
 
                     <p class="job-details text-stone-500 font-normal">${interview.jobDetails}</p>
 
-                    <p class="inteview-status">${interview.status}</p>
+                    <p class="status interview-status">${interview.status}</p>
                     <p class="extra-text">${interview.extraText}</p>
 
                     <div class="card-buttons">
@@ -173,7 +184,7 @@ function renderRejected() {
 
                     <p class="job-details text-stone-500 font-normal">${rejected.jobDetails}</p>
 
-                    <p class="rejected-status">${rejected.status}</p>
+                    <p class="status rejected-status">${rejected.status}</p>
                     <p class="extra-text">${rejected.extraText}</p>
 
                     <div class="card-buttons">
