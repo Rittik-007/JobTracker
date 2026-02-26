@@ -24,11 +24,12 @@ body {
     margin-bottom: 15px;
 }
 
-.count-container{
+.count-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
+
 .count-box {
     /* border: 1px solid rgb(203, 199, 199); */
     background-color: white;
@@ -36,25 +37,25 @@ body {
     border-radius: 8px;
 }
 
-hr{
+hr {
     margin-top: 30px;
     border: 1px solid rgb(224, 222, 222);
 }
 
 
 /* main section styles */
-.main{
+.main {
     max-width: 80%;
     margin: 0 auto;
 }
 
-.available-box{
+.available-box {
     display: flex;
     justify-content: space-between;
     margin-bottom: 24px;
 }
 
-.filter-btn{
+.filter-btn {
     outline: none;
     padding: 8px 20px;
     background-color: white;
@@ -63,7 +64,13 @@ hr{
     margin-right: 8px;
     cursor: pointer;
 }
-.filter-btn-active{
+
+.filter-btn:hover {
+    outline: 2px solid #3B82F6;
+    color: #3B82F6;
+}
+
+.filter-btn-active {
     outline: none;
     padding: 8px 20px;
     background-color: #3B82F6;
@@ -73,18 +80,23 @@ hr{
     cursor: pointer;
 }
 
-.filtered-section{
+.filter-btn-active:hover {
+    outline: none !important;
+}
+
+.filtered-section {
     display: none;
     grid-template-columns: 1;
     gap: 16px;
     padding: 25px 0;
 }
+
 /* .filtered-section > *:not(:last-child) {
   margin-bottom: 16px;
 } */
 
 
-#nojobs{
+#nojobs {
     display: none;
     flex-direction: column;
     justify-content: center;
@@ -95,33 +107,38 @@ hr{
     margin-bottom: 30px;
 }
 
-.allcards{
+.allcards {
     display: grid;
     grid-template-columns: 1;
     gap: 16px;
     padding: 25px 0;
 }
-.card{
+
+.card {
     padding: 25px;
     display: flex;
     justify-content: space-between;
     transition: 0.2s ease-in-out;
 }
-.card:hover{
+
+.card:hover {
     box-shadow: 0 0 20px rgba(105, 105, 105, 0.11);
 }
+
 /* extra class for detailing */
-.interview-card{
+.interview-card {
     border-left: 5px solid oklch(72.3% 0.219 149.579);
 }
-.reject-card{
+
+.reject-card {
     border-left: 5px solid oklch(57.7% 0.245 27.325);
 }
 
-.job-details{
+.job-details {
     margin: 16px 0;
 }
-.status{
+
+.status {
     display: inline;
     padding: 10px 15px;
     background-color: #EEF4FF;
@@ -130,7 +147,8 @@ hr{
     border-radius: 8px;
     margin-bottom: 10px;
 }
-.interview-status{
+
+.interview-status {
     display: inline;
     padding: 6px 17px;
     background-color: oklch(72.887% 0.21192 147.841 / 0.047);
@@ -140,7 +158,8 @@ hr{
     border-radius: 4px;
     margin-bottom: 10px;
 }
-.rejected-status{
+
+.rejected-status {
     display: inline;
     padding: 6px 17px;
     background-color: oklch(58.305% 0.23863 28.392 / 0.06);
@@ -150,11 +169,12 @@ hr{
     border-radius: 4px;
     margin-bottom: 10px;
 }
-.extra-text{
+
+.extra-text {
     margin: 15px 0 20px;
 }
 
-.interview-btn{
+.interview-btn {
     font-weight: 600;
     color: oklch(72.3% 0.219 149.579);
     border: 2px solid oklch(72.3% 0.219 149.579);
@@ -164,12 +184,13 @@ hr{
     cursor: pointer;
     transition: 0.4s ease-in-out;
 }
-.interview-btn:hover{
+
+.interview-btn:hover {
     background-color: oklch(72.3% 0.219 149.579);
     color: aliceblue;
 }
 
-.reject-btn{
+.reject-btn {
     font-weight: 600;
     color: oklch(57.7% 0.245 27.325);
     border: 2px solid oklch(57.7% 0.245 27.325);
@@ -178,17 +199,42 @@ hr{
     cursor: pointer;
     transition: 0.4s ease-in-out;
 }
-.reject-btn:hover{
+
+.reject-btn:hover {
     background-color: oklch(57.7% 0.245 27.325);
     color: aliceblue;
 }
 
-.delete-icon i{
+.delete-icon i {
     font-size: 2rem;
     color: rgb(142, 142, 142);
     cursor: pointer;
     transition: 0.2s ease-in-out;
 }
-.delete-icon i:hover{
+
+.delete-icon i:hover {
     color: oklch(57.7% 0.245 27.325);
+}
+
+
+
+@media screen and (max-width: 576px) {
+    .header-section {
+        max-width: 90%;
+        padding: 20px 0 30px;
+    }
+    .header-title {
+    font-size: 1.8rem;
+    text-align: center;}
+    .count-container {
+        gap: 10px;
+    }
+    .count-box {
+        text-align: center;
+        padding: 10px 20px;
+    }
+
+    .main {
+        max-width: 95%;
+    }
 }
