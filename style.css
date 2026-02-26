@@ -83,6 +83,18 @@ hr{
   margin-bottom: 16px;
 } */
 
+
+#nojobs{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    background-color: white;
+    padding: 100px 0;
+    margin-bottom: 30px;
+}
+
 .allcards{
     display: grid;
     grid-template-columns: 1;
@@ -98,6 +110,14 @@ hr{
 .card:hover{
     box-shadow: 0 0 20px rgba(105, 105, 105, 0.11);
 }
+/* extra class for detailing */
+.interview-card{
+    border-left: 5px solid oklch(72.3% 0.219 149.579);
+}
+.reject-card{
+    border-left: 5px solid oklch(57.7% 0.245 27.325);
+}
+
 .job-details{
     margin: 16px 0;
 }

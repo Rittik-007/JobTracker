@@ -14,6 +14,7 @@ const rejectedFilterBtn = document.getElementById('rejected-filter-btn');
 const allCards = document.getElementById('allcards');
 const mainContainer = document.querySelector('.main');
 const filterSection = document.getElementById('filtered-section');
+const noJobSection = document.getElementById('nojobs');
 
 
 function calculateCount() {
@@ -45,7 +46,11 @@ function toggleStyle(id) {
 
 
     if (id == 'interview-filter-btn') {
-        availableCount.innerText = interviewCount.innerText + " of " + total.innerText + " jobs"
+        availableCount.innerText = interviewCount.innerText + " of " + total.innerText + " jobs";
+
+        if(interviewList.length < 1){
+            noJobSection.style.display = 'flex';
+        }
 
         allCards.style.display = 'none';
         filterSection.style.display = 'grid';
@@ -54,11 +59,19 @@ function toggleStyle(id) {
     else if (id == 'all-filter-btn') {
         availableCount.innerText = allCards.children.length + " jobs";
 
+        if(allCards.children.length < 1){
+            noJobSection.style.display = 'flex';
+        }
+
         allCards.style.display = 'grid';
         filterSection.style.display = 'none';
     }
     else if (id == 'rejected-filter-btn') {
-        availableCount.innerText = rejectedCount.innerText + " of " + total.innerText + " jobs"
+        availableCount.innerText = rejectedCount.innerText + " of " + total.innerText + " jobs";
+
+        if(rejectedList.length < 1){
+            noJobSection.style.display = 'flex';
+        }
 
         allCards.style.display = 'none';
         filterSection.style.display = 'grid';
@@ -99,6 +112,8 @@ mainContainer.addEventListener('click', function (event) {
 
         if (!exist) {
             interviewList.push(cardInfo);
+        }else{
+            return;
         }
 
         // remove from rejected list
@@ -130,6 +145,8 @@ mainContainer.addEventListener('click', function (event) {
 
         if (!exist) {
             rejectedList.push(cardInfo);
+        }else{
+            return;
         }
 
         // remove from interview list
@@ -163,7 +180,7 @@ function renderInterview() {
         console.log({ interview });
 
         let div = document.createElement('div');
-        div.className = 'card bg-white rounded-lg';
+        div.className = 'card interview-card bg-white rounded-lg';
         div.innerHTML = `
             <div>
                     <h3 class="card-title text-2xl font-bold text-blue-950">${interview.cardTitle}</h3>
@@ -194,7 +211,7 @@ function renderRejected() {
         console.log(rejected);
 
         let div = document.createElement('div');
-        div.className = 'card bg-white rounded-lg';
+        div.className = 'card reject-card bg-white rounded-lg';
         div.innerHTML = `
             <div>
                     <h3 class="card-title text-2xl font-bold text-blue-950">${rejected.cardTitle}</h3>
