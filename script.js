@@ -45,15 +45,21 @@ function toggleStyle(id) {
 
 
     if (id == 'interview-filter-btn') {
+        availableCount.innerText = interviewCount.innerText + " of " + total.innerText + " jobs"
+
         allCards.style.display = 'none';
         filterSection.style.display = 'grid';
         renderInterview();
     }
     else if (id == 'all-filter-btn') {
+        availableCount.innerText = allCards.children.length + " jobs";
+
         allCards.style.display = 'grid';
         filterSection.style.display = 'none';
     }
     else if (id == 'rejected-filter-btn') {
+        availableCount.innerText = rejectedCount.innerText + " of " + total.innerText + " jobs"
+
         allCards.style.display = 'none';
         filterSection.style.display = 'grid';
         renderRejected();
@@ -79,7 +85,7 @@ mainContainer.addEventListener('click', function (event) {
 
         statusElement.classList.remove('rejected-status');
         statusElement.classList.add('interview-status');
-        statusElement.innerText = event.target.innerText;
+        statusElement.innerText = event.target.innerText + 'ED';
 
         const cardInfo = {
             cardTitle,
@@ -110,7 +116,7 @@ mainContainer.addEventListener('click', function (event) {
 
         statusElement.classList.remove('interview-status');
         statusElement.classList.add('rejected-status');
-        statusElement.innerText = event.target.innerText;
+        statusElement.innerText = event.target.innerText + 'ED';
 
         const cardInfo = {
             cardTitle,
@@ -131,6 +137,18 @@ mainContainer.addEventListener('click', function (event) {
 
         renderRejected();
         renderInterview();
+        calculateCount();
+    }
+    else if(event.target.classList.contains('delete-btn')){
+        const parentCard = event.target.parentNode.parentNode;
+        // const targetChild = event.target.classList.contains('delete-btn');
+        // console.log(parentCard);
+
+        interviewList = interviewList.filter(item => item.cardTitle !== cardTitle);
+        rejectedList = rejectedList.filter(item => item.cardTitle !== cardTitle);
+
+        parentCard.remove();
+
         calculateCount();
     }
 
@@ -162,7 +180,7 @@ function renderInterview() {
                     </div>
                 </div>
                 <div class="delete-icon">
-                    <i class="fa-solid fa-trash-can"></i>
+                    <i class="fa-solid fa-trash-can delete-btn"></i>
                 </div>
         `;
         filterSection.appendChild(div);
@@ -193,7 +211,7 @@ function renderRejected() {
                     </div>
                 </div>
                 <div class="delete-icon">
-                    <i class="fa-solid fa-trash-can"></i>
+                    <i class="fa-solid fa-trash-can delete-btn"></i>
                 </div>
         `;
         filterSection.appendChild(div);
